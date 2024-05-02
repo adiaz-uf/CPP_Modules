@@ -38,11 +38,6 @@ Contact PhoneBook::search(int _index)
     return (contacts[_index]);
 }
 
-/* void PhoneBook::set_num_contacts(int num)
-{
-    num_contacts = num;
-} */
-
 int PhoneBook::get_num_contacts()
 {
     return (num_contacts);
