@@ -36,7 +36,6 @@ void   add_contact(PhoneBook *phone)
     phone->add(c);
 }
 
-
 /**
  * Truncates a given string to a specified size by cutting 
  * it off and adding ellipsis if it exceeds the size
