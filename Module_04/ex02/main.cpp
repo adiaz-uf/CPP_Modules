@@ -4,8 +4,9 @@
 
 int main(void)
 {
+    //const AAnimal d;
 
-    Animal **zoo = new Animal *[6];
+    AAnimal **zoo = new AAnimal *[6];
 
     zoo[0] = new Dog();
     zoo[1] = new Dog();
