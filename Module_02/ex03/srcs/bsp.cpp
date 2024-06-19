@@ -22,6 +22,8 @@ bool bsp(Point const a, Point const b, Point const c, Point const point)
     Fixed pacArea = triangleArea(point, c, a);
     Fixed pabArea = triangleArea(point, a, b);
 
+	if (pbcArea == 0 || pacArea == 0 || pabArea == 0)
+		return (0);
 	return (abcArea == (pbcArea + pacArea + pabArea));
 }
 

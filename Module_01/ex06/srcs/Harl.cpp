@@ -46,30 +46,17 @@ void Harl::complain(std::string level)
     switch (value)
     {
     case 0:
-        while (value < 4)
-        {
-            (this->*memb_functions[value++])();
-        }
-        break;
+        (this->*memb_functions[value++])();
     case 1:
-        while (value < 4)
-        {
-            (this->*memb_functions[value++])();
-        }
-        break;
+        (this->*memb_functions[value++])();
     case 2:
-        while (value < 4)
-        {
-            (this->*memb_functions[value++])();
-        }
-        break;
+        (this->*memb_functions[value++])();
     case 3:
         (this->*memb_functions[value])();
-        break;
+        return ;
     default:
         cout << "[ Probably complaining about insignificant problems ]" << endl;
         break;
     }
-           
 }
     
