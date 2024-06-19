@@ -3,13 +3,13 @@
 using std::cout;
 using std::endl;
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat() : AAnimal("Cat")
 {
     this->brain = new Brain;
     cout << GREEN "Cat Constructor" END << endl;
 }
 
-Cat::Cat(const Cat &copy) : Animal(copy)
+Cat::Cat(const Cat &copy) : AAnimal(copy)
 {
     cout << GREEN "Cat Copy Constructor" END << endl;
 
@@ -31,3 +31,9 @@ Cat::~Cat()
 
     cout << GREEN "Cat Destructor" END << endl;
 }
+
+void Cat::makeSound() const
+{
+    cout << PINK "¡Miau Miau!" END << endl;
+}
+

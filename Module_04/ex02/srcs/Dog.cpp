@@ -3,14 +3,14 @@
 using std::cout;
 using std::endl;
 
-Dog::Dog() : Animal("Dog")
+Dog::Dog() : AAnimal("Dog")
 {
     this->brain = new Brain;
 
     cout << PINK "Dog Constructor" END << endl;
 }
 
-Dog::Dog(const Dog &copy) : Animal(copy)
+Dog::Dog(const Dog &copy) : AAnimal(copy)
 {
     cout << PINK "Dog Copy Constructor" END << endl;
 
@@ -32,3 +32,9 @@ Dog::~Dog()
     
     cout << PINK "Dog Destructor" END << endl;
 }
+
+void Dog::makeSound() const
+{
+    cout << PINK "¡Guau Guau!" END << endl;
+}
+

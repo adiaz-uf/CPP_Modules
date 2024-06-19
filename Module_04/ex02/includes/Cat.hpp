@@ -1,10 +1,10 @@
 #ifndef CAT_HPP
 # define CAT_HPP
 
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 # include "Brain.hpp"
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
     private:
         Brain* brain;
@@ -13,6 +13,8 @@ class Cat : public Animal
         Cat(const Cat &copy);
         Cat& operator=(const Cat &assign);
         ~Cat();
+
+        void makeSound() const;
 };
 
 #endif
