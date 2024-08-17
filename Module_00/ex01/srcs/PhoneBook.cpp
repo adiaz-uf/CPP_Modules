@@ -1,6 +1,5 @@
 #include "../includes/PhoneBook.hpp"
 
-// Constructor -> Inicializa los atributos de la clase.
 PhoneBook::PhoneBook()
 {
     std::cout << "Constructor called" << std::endl;

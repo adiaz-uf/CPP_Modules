@@ -9,7 +9,7 @@ Contact::Contact()
 // Destructor
 Contact::~Contact()
 {
-   
+
 }
 
 std::string Contact::get_first_name()
