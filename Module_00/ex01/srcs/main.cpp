@@ -89,7 +89,9 @@ void search(PhoneBook *phone)
         std::cout <<CYAN "\n Enter the index of the entry to display:\n\n> " END;
         getline(std::cin, display_contact);
         index_to_display = std::atoi(display_contact.c_str());
-        if (std::cin.eof() || display_contact == "")
+        if (std::cin.eof())
+            break;
+        else if (display_contact == "")
             std::cout << std::endl;
         else if (!std::cin.fail() && index_to_display >= 0 && index_to_display < count
             && display_contact.length() == 1 && isdigit(display_contact[0]))
@@ -119,12 +121,14 @@ int main(void)
         std::cout <<CYAN "\n    Enter one of the following commands: " << std::endl;
         std::cout << "           ADD, SEARCH or EXIT \n\n> " END;
         getline(std::cin, input);
-        if (std::cin.eof() || input == "")
+        if (std::cin.eof())
+            return 1;
+        else if (input == "")
             std::cout << std::endl;
         else if (input.compare("add") == 0 || input.compare("ADD") == 0)
             add_contact(&phonebook);
         else if (input.compare("search") == 0 || input.compare("SEARCH") == 0)
-           search(&phonebook); 
+            search(&phonebook); 
         else if (input.compare("exit") == 0 || input.compare("EXIT") == 0)
             break;
         else
