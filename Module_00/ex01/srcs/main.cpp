@@ -71,13 +71,16 @@ void search(PhoneBook *phone)
 
     count = phone->get_num_contacts();
     std::cout << std::endl;
+    std::cout << "     Index|      Name| Last Name|  Nickname " << std::endl;
+    std::cout << "-------------------------------------------" << std::endl;
     for (int i = 0; i < count; i++) // Loop to display search info of contacts
     {
         Contact new_c = phone->search(i);
-        std::cout << std::setw(10) << "[" << new_c.get_index() << "]|";
+        std::cout << std::setw(8) << "[" << new_c.get_index() << "]|";
         std::cout << std::setw(10) << truncate_str(new_c.get_first_name(), 10) << "|";
         std::cout << std::setw(10) << truncate_str(new_c.get_last_name(), 10) << "|";
         std::cout << std::setw(10) << truncate_str(new_c.get_nickname(), 10) << std::endl;
+        std::cout << "-------------------------------------------" << std::endl;
     }
     while (true) // Loop to display the info of the index selected
     {
@@ -110,29 +113,35 @@ void search(PhoneBook *phone)
     }
 }
 
-int main(void)
+int main(int argc, char **argv)
 {
-    PhoneBook   phonebook;
-    std::string input;
-    
-    std::cout << CYAN "---------- Welcome to Phonebook ----------" END<< std::endl;
-    while (true)
+    (void)argv;
+    if (argc == 1)
     {
-        std::cout <<CYAN "\n    Enter one of the following commands: " << std::endl;
-        std::cout << "           ADD, SEARCH or EXIT \n\n> " END;
-        getline(std::cin, input);
-        if (std::cin.eof())
-            return 1;
-        else if (input == "")
-            std::cout << std::endl;
-        else if (input.compare("add") == 0 || input.compare("ADD") == 0)
-            add_contact(&phonebook);
-        else if (input.compare("search") == 0 || input.compare("SEARCH") == 0)
-            search(&phonebook); 
-        else if (input.compare("exit") == 0 || input.compare("EXIT") == 0)
-            break;
-        else
-            std::cout << RED "\n          !Invalid command!\n" END << std::endl;       
+        PhoneBook   phonebook;
+        std::string input;
+        
+        std::cout << CYAN "---------- Welcome to Phonebook ----------" END<< std::endl;
+        while (true)
+        {
+            std::cout <<CYAN "\n    Enter one of the following commands: " << std::endl;
+            std::cout << "           ADD, SEARCH or EXIT \n\n> " END;
+            getline(std::cin, input);
+            if (std::cin.eof())
+                return 1;
+            else if (input == "")
+                std::cout << std::endl;
+            else if (input.compare("add") == 0 || input.compare("ADD") == 0)
+                add_contact(&phonebook);
+            else if (input.compare("search") == 0 || input.compare("SEARCH") == 0)
+                search(&phonebook); 
+            else if (input.compare("exit") == 0 || input.compare("EXIT") == 0)
+                break;
+            else
+                std::cout << RED "\n            !Invalid command!\n" END << std::endl;       
+        }
     }
+    else 
+        std::cout << "Invalid Number of arguments" << std::endl;
     return 0;
 }
