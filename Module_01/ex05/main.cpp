@@ -1,23 +1,23 @@
 #include "includes/Harl.hpp"
 
-using std::cout;
-using std::endl;
-using std::cin;
-
 int main(void)
 {
     std::string input;
     Harl        h;
 
-    cout << "Hi! Im Harl, select write one of this comments:" << endl;
-    cout << CYAN "- Debug" END << endl;
-    cout << PINK "- Info" END << endl;
-    cout << YELL "- Warning" END << endl;
-    cout << RED "- Error" END << endl;
+    std::cout << "Hi! Im Harl, select write one of this comments:" << std::endl;
+    std::cout << CYAN "- Debug" END << std::endl;
+    std::cout << PINK "- Info" END << std::endl;
+    std::cout << YELL "- Warning" END << std::endl;
+    std::cout << RED "- Error" END << std::endl;
     while (true)
     {
-        cout << "> ";
-        cin >> input;
+        std::cout << "> ";
+        getline(std::cin, input);
+        if (std::cin.eof())
+            return EXIT_FAILURE;
+        else if (input == "")
+            std::cout << std::endl;
         h.complain(input);
         if (input == "exit" || input == "EXIT")
             break;

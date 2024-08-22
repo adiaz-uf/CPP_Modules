@@ -1,27 +1,24 @@
 #include "../includes/Harl.hpp"
 
-using std::cout;
-using std::endl;
-
 Harl::Harl(){}
 
 Harl::~Harl(){}
 
 void Harl::debug(void)
 {
-    cout << CYAN DEBUG_MSG END<< endl;
+    std::cout << CYAN DEBUG_MSG END << std::endl;
 }
 void Harl::info(void)
 {
-    cout <<PINK INFO_MSG END << endl;
+    std::cout << PINK INFO_MSG END << std::endl;
 }
 void Harl::warning(void)
 {
-    cout <<YELL WARNING_MSG END<< endl;
+    std::cout << YELL WARNING_MSG END << std::endl;
 }
 void Harl::error(void)
 {
-    cout <<RED ERROR_MSG END<< endl;
+    std::cout << RED ERROR_MSG END << std::endl;
 }
 
 void Harl::complain(std::string level)
