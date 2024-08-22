@@ -1,24 +1,21 @@
 # include "Brain.hpp"
 # include <cstring>
 
-using std::cout;
-using std::endl;
-
 Brain::Brain()
 {
-    cout << YELL "Brain Constructor" END << endl;
+    std::cout << YELL "Brain Constructor" END <<  std::endl;
 }
 
 Brain::Brain(const Brain &copy)
 {
-    cout << YELL "Brain Copy Constructor" END << endl;
+    std::cout << YELL "Brain Copy Constructor" END <<  std::endl;
 
     *this = copy;
 }
 
 Brain &Brain::operator=(const Brain &assign)
 {
-    cout << YELL "Brain Assignment Constructor" END << endl;
+    std::cout << YELL "Brain Assignment Constructor" END <<  std::endl;
     int i = 0;
     while (i < 100)
     {
@@ -30,5 +27,5 @@ Brain &Brain::operator=(const Brain &assign)
 
 Brain::~Brain()
 {
-    cout << YELL "Brain Destructor" END << endl;
+    std::cout << YELL "Brain Destructor" END <<  std::endl;
 }

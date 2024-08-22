@@ -1,29 +1,26 @@
 #include "ClapTrap.hpp"
 
-using std::cout;
-using std::endl;
-
 ClapTrap::ClapTrap() : 
 name("Default"), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-    cout << "Default Constructor " << endl;
+    std::cout << "Default Constructor " <<  std::endl;
 }
 
 ClapTrap::ClapTrap(std::string _name) : 
 name(_name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-    cout << "Name Constructor " << endl;
+    std::cout << "Name Constructor " <<  std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy)
 {
     *this = copy;
-    cout << "Copy Constructor " << endl;
+    std::cout << "Copy Constructor " <<  std::endl;
 }   
 
 ClapTrap &ClapTrap::operator= (const ClapTrap &assign)
 {
-    cout << "Asiggnment Operator Constructor " << endl;
+    std::cout << "Asiggnment Operator Constructor " <<  std::endl;
     this->name = assign.name;
     this->hitPoints = assign.hitPoints;
     this->energyPoints = assign.energyPoints;
@@ -33,7 +30,7 @@ ClapTrap &ClapTrap::operator= (const ClapTrap &assign)
 
 ClapTrap::~ClapTrap()
 {
-    cout << "Default Destructor " << endl;
+    std::cout << "Default Destructor " <<  std::endl;
 }
 
 /* Getters */
@@ -83,38 +80,38 @@ void ClapTrap::attack(const std::string& target)
 {
     if (this->energyPoints <= 0 || this->hitPoints <= 0)
     {
-        cout << RED "ClapTrap " << this->name << " can't attack " END << endl;
+        std::cout << RED "ClapTrap " << this->name << " can't attack " END <<  std::endl;
         return ;
     }
     this->energyPoints -= 1;
 
-    cout << CYAN "ClapTrap " << this->name << " attacks " << target << 
-    ", causing " << this->attackDamage << " points of damage!" END << endl;
+    std::cout << CYAN "ClapTrap " << this->name << " attacks " << target << 
+    ", causing " << this->attackDamage << " points of damage!" END <<  std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
     if (this->energyPoints <= 0 || this->hitPoints <= 0)
     {
-        cout << RED "ClapTrap " << this->name << " can't take damage " END << endl;
+        std::cout << RED "ClapTrap " << this->name << " can't take damage " END <<  std::endl;
         return ;
     }
     this->hitPoints -= amount;
 
-    cout << YELL "ClapTrap " << this->name << " takes " <<
-    amount << " points of damage!" END << endl;
+    std::cout << YELL "ClapTrap " << this->name << " takes " <<
+    amount << " points of damage!" END <<  std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
     if (this->energyPoints <= 0 || this->hitPoints <= 0)
     {
-        cout << RED "ClapTrap " << this->name << " can't repair " END << endl;
+        std::cout << RED "ClapTrap " << this->name << " can't repair " END <<  std::endl;
         return ;
     }
     this->hitPoints += amount;
     this->energyPoints -= 1;
 
-    cout << PINK "ClapTrap " << this->name << " repairs itself " <<
-    amount << " points of health!" END << endl;
+    std::cout << PINK "ClapTrap " << this->name << " repairs itself " <<
+    amount << " points of health!" END <<  std::endl;
 }

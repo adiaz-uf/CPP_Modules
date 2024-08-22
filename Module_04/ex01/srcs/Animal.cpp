@@ -1,28 +1,25 @@
 # include "Animal.hpp"
 
-using std::cout;
-using std::endl;
-
 Animal::Animal() : type("None")
 {
-    cout << CYAN "Animal No Type Constructor" END << endl;
+    std::cout << CYAN "Animal No Type Constructor" END <<  std::endl;
 }
 
 Animal::Animal(std::string name) : type(name)
 {
-    cout << CYAN "Animal Type Constructor" END << endl;
+    std::cout << CYAN "Animal Type Constructor" END <<  std::endl;
 }
 
 Animal::Animal(const Animal &copy)
 {
-    cout << CYAN "Animal Copy Constructor" END<< endl;
+    std::cout << CYAN "Animal Copy Constructor" END<<  std::endl;
 
     *this = copy;
 }
 
 Animal &Animal::operator=(const Animal &assign)
 {
-    cout << CYAN "Animal Assignment Constructor" END<< endl;
+    std::cout << CYAN "Animal Assignment Constructor" END<<  std::endl;
 
     this->type = assign.type;
     return *this;
@@ -30,7 +27,7 @@ Animal &Animal::operator=(const Animal &assign)
 
 Animal::~Animal()
 {
-    cout << CYAN "Animal Destructor" END << endl;
+    std::cout << CYAN "Animal Destructor" END <<  std::endl;
 }
 
 std::string Animal::getType() const
@@ -41,9 +38,9 @@ std::string Animal::getType() const
 void Animal::makeSound() const
 {
     if (this->type.compare("Dog") == 0)
-        cout << PINK "¡Guau Guau!" END << endl;
+        std::cout << PINK "¡Guau Guau!" END <<  std::endl;
     else if (this->type.compare("Cat") == 0)
-        cout << PINK "¡Miau Miau!" END << endl;
+        std::cout << PINK "¡Miau Miau!" END <<  std::endl;
     else
-        cout << RED "Wrong animal sound" END << endl;
+        std::cout << RED "Wrong animal sound" END <<  std::endl;
 }

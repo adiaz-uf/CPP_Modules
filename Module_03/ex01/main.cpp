@@ -1,15 +1,12 @@
 #include "ScavTrap.hpp"
 
-using std::cout;
-using std::endl;
-
 void show_info(ClapTrap &c)
 {
-    cout << "\nName: " << c.getName() << endl;
-    cout << "HitPoints: " << c.getHitPoints();
-    cout << " | EnergyPoints: " << c.getEnergyPoints();
-    cout << " | AttackDamage: " << c.getAttackDamage() << endl;
-    cout << "--------------------------------------------------" << endl;
+    std::cout << "\nName: " << c.getName() <<  std::endl;
+    std::cout << "HitPoints: " << c.getHitPoints();
+    std::cout << " | EnergyPoints: " << c.getEnergyPoints();
+    std::cout << " | AttackDamage: " << c.getAttackDamage() <<  std::endl;
+    std::cout << "--------------------------------------------------" <<  std::endl;
 }
 
 int main(void)

@@ -1,8 +1,5 @@
 #include "Fixed.hpp"
 
-using std::cout;
-using std::endl;
-
 Fixed::Fixed(void) : _fixed_point_value(0) // Default contructor
 {
 }

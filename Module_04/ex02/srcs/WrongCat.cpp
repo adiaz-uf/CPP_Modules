@@ -1,23 +1,20 @@
 # include "WrongCat.hpp"
 
-using std::cout;
-using std::endl;
-
 WrongCat::WrongCat() : WrongAnimal("WrongCat")
 {
-    cout << YELL "WrongCat Constructor" END << endl;
+    std::cout << YELL "WrongCat Constructor" END <<  std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat &copy) : WrongAnimal(copy)
 {
-    cout << YELL "WrongCat Copy Constructor" END << endl;
+    std::cout << YELL "WrongCat Copy Constructor" END <<  std::endl;
 
     *this = copy;
 }
 
 WrongCat &WrongCat::operator=(const WrongCat &assign)
 {
-    cout << YELL "WrongCat Assignment Constructor" END << endl;
+    std::cout << YELL "WrongCat Assignment Constructor" END <<  std::endl;
 
     this->type = assign.type;
     return *this;
@@ -25,5 +22,5 @@ WrongCat &WrongCat::operator=(const WrongCat &assign)
 
 WrongCat::~WrongCat()
 {
-    cout << YELL "WrongCat Destructor" END << endl;
+    std::cout << YELL "WrongCat Destructor" END <<  std::endl;
 }

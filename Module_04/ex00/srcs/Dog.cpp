@@ -1,23 +1,20 @@
 # include "Dog.hpp"
 
-using std::cout;
-using std::endl;
-
 Dog::Dog() : Animal("Dog")
 {
-    cout << PINK "Dog Constructor" END << endl;
+    std::cout << PINK "Dog Constructor" END <<  std::endl;
 }
 
 Dog::Dog(const Dog &copy) : Animal(copy)
 {
-    cout << PINK "Dog Copy Constructor" END << endl;
+    std::cout << PINK "Dog Copy Constructor" END <<  std::endl;
 
     *this = copy;
 }
 
 Dog &Dog::operator=(const Dog &assign)
 {
-    cout << PINK "Dog Assignment Constructor" END << endl;
+    std::cout << PINK "Dog Assignment Constructor" END <<  std::endl;
 
     this->type = assign.type;
     return *this;
@@ -25,5 +22,5 @@ Dog &Dog::operator=(const Dog &assign)
 
 Dog::~Dog()
 {
-    cout << PINK "Dog Destructor" END << endl;
+    std::cout << PINK "Dog Destructor" END <<  std::endl;
 }

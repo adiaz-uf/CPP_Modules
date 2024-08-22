@@ -1,28 +1,25 @@
 # include "WrongAnimal.hpp"
 
-using std::cout;
-using std::endl;
-
 WrongAnimal::WrongAnimal() : type("None")
 {
-    cout << CYAN "WrongAnimal No Type Constructor" END << endl;
+    std::cout << CYAN "WrongAnimal No Type Constructor" END <<  std::endl;
 }
 
 WrongAnimal::WrongAnimal(std::string name) : type(name)
 {
-    cout << CYAN "WrongAnimal Type Constructor" END << endl;
+    std::cout << CYAN "WrongAnimal Type Constructor" END <<  std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &copy)
 {
-    cout << CYAN "WrongAnimal Copy Constructor" END<< endl;
+    std::cout << CYAN "WrongAnimal Copy Constructor" END<<  std::endl;
 
     *this = copy;
 }
 
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &assign)
 {
-    cout << CYAN "WrongAnimal Assignment Constructor" END<< endl;
+    std::cout << CYAN "WrongAnimal Assignment Constructor" END<<  std::endl;
 
     this->type = assign.type;
     return *this;
@@ -30,7 +27,7 @@ WrongAnimal &WrongAnimal::operator=(const WrongAnimal &assign)
 
 WrongAnimal::~WrongAnimal()
 {
-    cout << CYAN "WrongAnimal Destructor" END << endl;
+    std::cout << CYAN "WrongAnimal Destructor" END <<  std::endl;
 }
 
 std::string WrongAnimal::getType() const
@@ -41,7 +38,7 @@ std::string WrongAnimal::getType() const
 void WrongAnimal::makeSound() const
 {
     if (this->type.compare("WrongCat") == 0)
-        cout << PINK "¡Wrong Miau Miau!" END << endl;
+        std::cout << PINK "¡Wrong Miau Miau!" END <<  std::endl;
     else
-        cout << RED "WrongAnimal sound" END << endl;
+        std::cout << RED "WrongAnimal sound" END <<  std::endl;
 }

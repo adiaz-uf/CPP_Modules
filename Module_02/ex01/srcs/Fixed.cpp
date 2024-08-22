@@ -1,40 +1,37 @@
 #include "Fixed.hpp"
 
-using std::cout;
-using std::endl;
-
 Fixed::Fixed(void) : _fixed_point_value(0) // Default contructor
 {
-    cout << "Default constructor called" << endl;
+    std::cout << "Default constructor called" <<  std::endl;
 }
 
 Fixed::Fixed(const int int_param) : _fixed_point_value(int_param * (1 << Fixed::_fractional_bits))
 {
-    cout << "Int constructor called" << endl;
+    std::cout << "Int constructor called" <<  std::endl;
 }
 
 Fixed::Fixed(const float float_param) : _fixed_point_value(roundf(float_param * (1 << _fractional_bits)))
 {
-    cout << "Float constructor called" << endl;
+    std::cout << "Float constructor called" <<  std::endl;
 }
 
 Fixed::Fixed(const Fixed &copy) // Copy default contructor
 {
     *this = copy;
-    cout << "Copy constructor called" << endl;
+    std::cout << "Copy constructor called" <<  std::endl;
 }
 
 Fixed &Fixed::operator = (const Fixed &param) // Assigment operator constructor
 {
     if (this != &param)
         this->_fixed_point_value = param.getRawBits();
-    cout << "Copy assignment operator called" << endl;
+    std::cout << "Copy assignment operator called" <<  std::endl;
     return *this;
 }
 
 Fixed::~Fixed() // Default destructor
 {
-    cout << "Destructor called" << endl;
+    std::cout << "Destructor called" <<  std::endl;
 }
 
 int Fixed::getRawBits(void) const
@@ -52,7 +49,7 @@ float   Fixed::toFloat(void) const
     return ((float)_fixed_point_value / (float)(1 << _fractional_bits));
 }
 
-int     Fixed::toInt(void) const
+int Fixed::toInt(void) const
 {
     return ((int)_fixed_point_value / (int)(1 << _fractional_bits));
 }
