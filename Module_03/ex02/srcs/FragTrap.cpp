@@ -37,6 +37,20 @@ FragTrap::~FragTrap()
     std::cout << "FragTrap Destructor " <<  std::endl;
 }
 
+// Actions
+void FragTrap::attack(const std::string& target)
+{
+    if (this->energyPoints <= 0 || this->hitPoints <= 0)
+    {
+        std::cout << RED "FragTrap " << this->name << " can't attack " END <<  std::endl;
+        return ;
+    }
+    this->energyPoints -= 1;
+
+    std::cout << CYAN "FragTrap " << this->name << " attacks " << target << 
+    ", causing " << this->attackDamage << " points of damage!" END <<  std::endl;
+}
+
 void FragTrap::highFivesGuys(void)
 {
     if (this->getEnergyPoints() <= 0 || this->getHitPoints() <= 0)
