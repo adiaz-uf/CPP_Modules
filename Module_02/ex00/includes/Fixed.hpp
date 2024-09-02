@@ -7,7 +7,7 @@ class Fixed
 {
     private:
         int              _fixed_point_value;
-        static const int _fractional_bits;
+        static const int _fractional_bits = 0;
     public:
         Fixed(); // Default contructor
         Fixed(const Fixed &copy); // Copy default contructor

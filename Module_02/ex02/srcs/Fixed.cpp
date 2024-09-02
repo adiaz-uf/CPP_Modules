@@ -21,7 +21,7 @@ Fixed::Fixed(const Fixed &copy) // Copy default contructor
     std::cout << "Copy constructor called" <<  std::endl;
 }
 
-Fixed &Fixed::operator = (const Fixed &param) // Assigment operator constructor
+Fixed &Fixed::operator=(const Fixed &param) // Assigment operator constructor
 {
     if (this != &param)
         this->_fixed_point_value = param.getRawBits();

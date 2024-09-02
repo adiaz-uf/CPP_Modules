@@ -15,7 +15,7 @@ Point::Point(const Point &copy) : x(copy.x), y(copy.y)
     *this = copy;
 }   
 
-Point &Point::operator = (const Point &assig)
+Point &Point::operator=(const Point &assig)
 {
     (Fixed)this->x = assig.getX();
     (Fixed)this->y = assig.getY();
