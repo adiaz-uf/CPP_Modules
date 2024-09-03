@@ -10,6 +10,10 @@
 # define PINK	"\e[1;38;5;199m"
 # define END	"\x1b[0m"
 
+
+// Virtual member function makes the program to decide 
+// which method use during the execution.
+
 class Animal
 {
     protected:
@@ -22,9 +26,8 @@ class Animal
         virtual ~Animal();
 
         // Getter
-        std::string getType() const;
-
-        void makeSound() const;
+        virtual std::string getType() const;    // Virtual member function makes the program to decide 
+        virtual void makeSound() const;         // which method use during the execution.
 };
 
 #endif

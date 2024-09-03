@@ -12,7 +12,7 @@ int main(void)
     std::cout << i->getType() << " " << std::endl;
 
     i->makeSound(); //will output the cat sound!
-    j->makeSound();
+    j->makeSound(); //will output the dog sound!
 
     meta->makeSound();
 

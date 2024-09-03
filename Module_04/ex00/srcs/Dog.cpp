@@ -24,3 +24,13 @@ Dog::~Dog()
 {
     std::cout << PINK "Dog Destructor" END <<  std::endl;
 }
+
+std::string Dog::getType() const
+{
+    return this->type;
+}
+
+void Dog::makeSound() const
+{
+    std::cout << PINK "¡Guau Guau!" END <<  std::endl;
+}

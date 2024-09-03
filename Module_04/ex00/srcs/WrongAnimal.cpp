@@ -37,8 +37,5 @@ std::string WrongAnimal::getType() const
 
 void WrongAnimal::makeSound() const
 {
-    if (this->type.compare("WrongCat") == 0)
-        std::cout << PINK "¡Wrong Miau Miau!" END <<  std::endl;
-    else
-        std::cout << RED "WrongAnimal sound" END <<  std::endl;
+    std::cout << RED "WrongAnimal Default sound" END <<  std::endl;
 }

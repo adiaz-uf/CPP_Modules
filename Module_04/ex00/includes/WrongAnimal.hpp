@@ -23,7 +23,7 @@ class WrongAnimal
 
         // Getter
         std::string getType() const;
-
+        
         void makeSound() const;
 };
 
