@@ -7,12 +7,15 @@
 class Cat : public Animal
 {
     private:
-        Brain* brain;
+        Brain *brain;
     public:
         Cat();
         Cat(const Cat &copy);
         Cat& operator=(const Cat &assign);
         ~Cat();
+
+        std::string getType() const;  
+        void makeSound() const;
 };
 
 #endif

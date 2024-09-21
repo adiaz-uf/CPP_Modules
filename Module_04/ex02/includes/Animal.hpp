@@ -1,5 +1,5 @@
-#ifndef AANIMAL_HPP
-# define AANIMAL_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 # include <iostream>
 
@@ -10,21 +10,21 @@
 # define PINK	"\e[1;38;5;199m"
 # define END	"\x1b[0m"
 
-class AAnimal
+class Animal
 {
     protected:
         std::string type;
     public:
-        AAnimal();
-        AAnimal(std::string name);
-        AAnimal(const AAnimal &copy);
-        AAnimal& operator=(const AAnimal &assign);
-        virtual ~AAnimal();
+        Animal();
+        Animal(std::string name);
+        Animal(const Animal &copy);
+        Animal& operator=(const Animal &assign);
+        virtual ~Animal() = 0;
 
         // Getter
         std::string getType() const;
 
-        virtual void makeSound() const = 0;
+        void makeSound() const;
 };
 
 #endif

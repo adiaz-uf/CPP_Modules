@@ -17,7 +17,7 @@ Cat &Cat::operator=(const Cat &assign)
 {
     std::cout << GREEN "Cat Assignment Constructor" END <<  std::endl;
 
-    this->brain =new Brain(*assign.brain);
+    this->brain = new Brain(*assign.brain);
     this->type = assign.type;
     return *this;
 }
@@ -27,4 +27,14 @@ Cat::~Cat()
     delete this->brain;
 
     std::cout << GREEN "Cat Destructor" END <<  std::endl;
+}
+
+std::string Cat::getType() const
+{
+    return this->type;
+}
+
+void Cat::makeSound() const
+{
+    std::cout << PINK "¡Miau Miau!" END <<  std::endl;
 }

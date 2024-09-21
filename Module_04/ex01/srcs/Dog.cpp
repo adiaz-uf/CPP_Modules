@@ -18,7 +18,7 @@ Dog &Dog::operator=(const Dog &assign)
 {
     std::cout << PINK "Dog Assignment Constructor" END <<  std::endl;
 
-    this->brain = assign.brain;
+    this->brain = new Brain(*assign.brain);
     this->type = assign.type;
     return *this;
 }
@@ -28,4 +28,14 @@ Dog::~Dog()
     delete this->brain;
     
     std::cout << PINK "Dog Destructor" END <<  std::endl;
+}
+
+std::string Dog::getType() const
+{
+    return this->type;
+}
+
+void Dog::makeSound() const
+{
+    std::cout << PINK "¡Guau Guau!" END <<  std::endl;
 }

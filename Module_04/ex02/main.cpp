@@ -1,12 +1,13 @@
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongCat.hpp"
+#include "Animal.hpp"
 
 int main(void)
 {
-    //const AAnimal d;
-
-    AAnimal **zoo = new AAnimal *[6];
+    /* Animal *instant = new Animal();
+    instant->makeSound(); */ // Not instantiable
+    Animal **zoo = new Animal *[6];
 
     zoo[0] = new Dog();
     zoo[1] = new Dog();

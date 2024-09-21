@@ -8,7 +8,7 @@ INCLUDE = -I./includes
 GREEN=\033[1;32m
 
 SRC	= main.cpp \
-	srcs/AAnimal.cpp\
+	srcs/Animal.cpp\
 	srcs/Dog.cpp\
 	srcs/Cat.cpp\
 	srcs/WrongAnimal.cpp\

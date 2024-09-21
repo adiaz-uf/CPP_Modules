@@ -7,12 +7,15 @@
 class Dog : public Animal
 {
     private:
-        Brain* brain;
+        Brain *brain;
     public:
         Dog();
         Dog(const Dog &copy);
         Dog& operator=(const Dog &assign);
         ~Dog();
+
+        std::string getType() const; 
+        void makeSound() const;
 };
 
 #endif
