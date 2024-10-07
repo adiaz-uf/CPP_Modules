@@ -1,5 +1,9 @@
 #include "Bureaucrat.h"
 
+Bureaucrat::Bureaucrat(): _name("No name"), _grade(150)
+{
+}
+
 Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
 {
     try
@@ -20,8 +24,23 @@ Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
     }
 }
 
+Bureaucrat::Bureaucrat(const Bureaucrat &copy): _name(copy._name), _grade(copy._grade)
+{
+
+}
+
+Bureaucrat &Bureaucrat::operator= (const Bureaucrat &assign)
+{
+    if (this != &assign)
+    {
+        this->_grade = assign._grade;
+    }
+    return *this;
+}
+
 Bureaucrat::~Bureaucrat()
 {
+
 }
 
 std::string Bureaucrat::getName() const

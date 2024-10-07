@@ -22,7 +22,11 @@ private:
     //Setter
     void setGrade(int grade);
 public:
-    Bureaucrat(std::string name, int grade);
+    Bureaucrat();
+    Bureaucrat(const std::string name, int grade);
+    Bureaucrat(const Bureaucrat &copy);
+    Bureaucrat &operator= (const Bureaucrat &assign);
+    
     ~Bureaucrat();
 
     // Public Methods
@@ -47,4 +51,5 @@ public:
 };
 
 std::ostream &operator<<(std::ostream &o, Bureaucrat b);
+
 #endif
