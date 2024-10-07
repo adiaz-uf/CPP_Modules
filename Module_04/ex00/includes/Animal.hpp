@@ -10,10 +10,6 @@
 # define PINK	"\e[1;38;5;199m"
 # define END	"\x1b[0m"
 
-
-// Virtual member function makes the program to decide 
-// which method use during the execution.
-
 class Animal
 {
     protected:

@@ -2,7 +2,7 @@ NAME =  ex01
 
 CC = c++
 RM = rm -rf
-CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=leak
 INCLUDE = -I./includes
 
 GREEN=\033[1;32m

@@ -25,7 +25,7 @@ int main(void)
 
     std::cout << x->getType() << " " << std::endl;
 
-    x->makeSound(); //will output the Wrongcat sound!
+    x->makeSound(); //will output the WrongAnimal sound!
     meta2->makeSound();
 
     delete x;
