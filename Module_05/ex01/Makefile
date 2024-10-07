@@ -1,4 +1,4 @@
-NAME = ex00
+NAME = ex01
 
 CC = c++
 RM = rm -rf
@@ -15,7 +15,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) 
-	@echo "\n$(GREEN)¡Compilation Success, you can run ex00!$(END)\n"
+	@echo "\n$(GREEN)¡Compilation Success, you can run ex01!$(END)\n"
 
 all: $(NAME) $(OBJS)
 
