@@ -9,7 +9,8 @@ GREEN = \033[1;32m
 END = \033[0m
 
 SRCS = main.cpp \
-		src/Bureaucrat.cpp
+		src/Bureaucrat.cpp \
+		src/Form.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 

@@ -69,7 +69,8 @@ void Bureaucrat::decrementGrade()
 {
     try
     {
-        this->setGrade(++this->_grade);
+        this->setGrade(this->getGrade() + 1);
+        std::cerr << GREEN "Decrement grade was successful :)" END << std::endl;
     }
     catch(Bureaucrat::GradeTooLowException &e)
     {
@@ -78,15 +79,30 @@ void Bureaucrat::decrementGrade()
 }
 
 void Bureaucrat::incrementGrade()
-{
+{    
     try
     {
-        this->setGrade(--this->_grade);
+        this->setGrade(this->getGrade() - 1);
+        std::cerr << GREEN "Increment grade was successful :)" END << std::endl;
     }
-    catch(Bureaucrat::GradeTooHighException &e)
+    catch(const std::exception& e)
     {
         std::cerr << RED "Increment grade failed :(" END << std::endl;
     }
+}
+
+void    Bureaucrat::signForm(Form &f)
+{
+    try
+    {
+        f.beSigned(*this);
+    }
+    catch (const std::exception& e)
+    {
+        std::cerr << RED << this->getName() << " couldn't sign " << f.getName() << " because " << END << e.what() << std::endl;
+        return ;
+    }
+    std::cout << GREEN << this->getName() << " signed " << f.getName() << END << std::endl;
 }
 
 const char *Bureaucrat::GradeTooHighException::what() const throw()

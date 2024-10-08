@@ -2,6 +2,7 @@
 # define BUREAUCRAT_H
 
 #include <iostream>
+#include "Form.h"
 
 # define MIN_GRADE 150
 # define MAX_GRADE 1
@@ -12,6 +13,8 @@
 # define YELL	"\e[1;93m"
 # define PINK	"\e[1;38;5;199m"
 # define END	"\033[0m"
+
+class Form;
 
 class Bureaucrat
 {
@@ -26,12 +29,16 @@ public:
     Bureaucrat(const Bureaucrat &copy);
     Bureaucrat &operator= (const Bureaucrat &assign);
     ~Bureaucrat();
+
     // Public Methods
-    void incrementGrade();
-    void decrementGrade();
+    void        incrementGrade();
+    void        decrementGrade();
+    void        signForm(Form &f);
+
     // Getters
     std::string getName() const;
-    int getGrade();
+    int         getGrade();
+
     // Exceptions
     class GradeTooHighException : public std::exception
     {
@@ -44,7 +51,7 @@ public:
             virtual const char *what() const throw();
     };
 };
-
+// Overloads
 std::ostream &operator<<(std::ostream &o, Bureaucrat b);
 
 #endif
