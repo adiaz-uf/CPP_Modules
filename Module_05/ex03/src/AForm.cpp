@@ -85,6 +85,7 @@ const char *AForm::FormNotSignedException::what() const throw()
     return (PINK "¡Form is not signed!" END);
 }
 
+
 std::ostream &operator<<(std::ostream &o, AForm &b)
 {
     o << GREEN << "AForm Info:" << std::endl << CYAN

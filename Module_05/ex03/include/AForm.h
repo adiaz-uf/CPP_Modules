@@ -28,7 +28,7 @@ public:
     AForm(const std::string name, const int signGrade, const int execGrade);
     AForm(const AForm &copy);
     AForm &operator=(const AForm &assign);
-    ~AForm();
+    virtual ~AForm();
 
     //Getters
     std::string     getName() const;
