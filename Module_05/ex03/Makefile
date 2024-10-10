@@ -1,4 +1,4 @@
-NAME = ex02
+NAME = ex03
 
 CC = c++
 RM = rm -rf
@@ -32,7 +32,7 @@ all: $(NAME)
 #executable compilation
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME) 
-	@echo "\n$(GREEN)¡Compilation Success, you can run ex02!$(END)\n"
+	@echo "\n$(GREEN)¡Compilation Success, you can run ex03!$(END)\n"
 
 #objs compilation
 $(OBJ_DIR)%.o:$(SRC_DIR)%.cpp
