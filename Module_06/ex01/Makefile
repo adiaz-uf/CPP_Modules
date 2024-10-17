@@ -1,4 +1,4 @@
-NAME = convert
+NAME = ex01
 
 CC = c++
 RM = rm -rf
@@ -15,9 +15,7 @@ END = \033[0m
 
 #source files
 SRCS =  main.cpp \
-		ScalarConverter.cpp \
-		FindType.cpp \
-		OutputConverter.cpp \
+		Serializer.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -30,7 +28,7 @@ all: $(NAME)
 #executable compilation
 $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME) 
-	@echo "\n$(GREEN)¡Compilation Success, you can run convert!$(END)\n"
+	@echo "\n$(GREEN)¡Compilation Success, you can run ex01!$(END)\n"
 
 #objs compilation
 $(OBJ_DIR)%.o:$(SRC_DIR)%.cpp
@@ -44,5 +42,8 @@ fclean: clean
 	@$(RM) $(NAME)
 
 re: fclean all
+
+run: $(NAME)
+	@./$(NAME)
 	
 .PHONY: all clean fclean re run
